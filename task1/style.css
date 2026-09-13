@@ -1,0 +1,170 @@
+/* Глобальный сброс и box-sizing (обязательное требование) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f6f8;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 1. Навигация (Flexbox) */
+.nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #004080;
+    text-decoration: underline;
+}
+
+/* 2. Шапка (Flexbox: align-items, gap) */
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.name {
+    font-size: 1.8rem;
+    color: #111;
+}
+
+.role {
+    font-size: 1.1rem;
+    color: #0066cc;
+    font-weight: 600;
+}
+
+.slogan {
+    color: #666;
+    font-style: italic;
+}
+
+/* 3. Основной контент */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    color: #222;
+    border-bottom: 2px solid #eef2f5;
+    padding-bottom: 8px;
+}
+
+/* Блок "О себе" */
+.bio p {
+    margin-bottom: 10px;
+}
+
+.bio p:last-child {
+    margin-bottom: 0;
+}
+
+/* Блок "Образование" */
+.education-list {
+    list-style: none;
+}
+
+.education-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* 5. Блок "Навыки" (Flexbox: flex-wrap, gap) */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* 6. Блок "Контакты" (Flexbox) */
+.footer {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.contacts-links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #003366;
+    text-decoration: underline;
+}
