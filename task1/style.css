@@ -135,6 +135,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    list-style: none;
 }
 
 .education-card {
@@ -178,7 +179,7 @@ body {
     font-weight: 600;
     font-size: 0.95rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    transition: all 0.25 ease;
+    transition: all 0.25s ease;
     cursor: default;
 }
 
