@@ -7,21 +7,22 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f3f4f6;
+    background: linear-gradient(135deg, #a8e6cf 0%, #dbede3 100%);
     color: #1a2e1a;
     display: flex;
     justify-content: center;
     padding: 40px 20px;
+    min-height: 100vh;
 }
 
-/* Главная карточка в зеленых тонах */
+/* Карточка резюме */
 .resume-card {
-    background-color: #e8f5e9;
-    max-width: 950px;
+    background-color: #d4edda;
+    max-width: 900px;
     width: 100%;
     padding: 45px;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px rgba(27, 94, 32, 0.12);
 }
 
 /* 1. Шапка */
@@ -30,15 +31,16 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .avatar {
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #2e7d32;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .header-info {
@@ -48,24 +50,24 @@ body {
 }
 
 .name {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     font-weight: 800;
-    color: #1b5e20;
+    color: #0d3b11;
 }
 
 .role {
-    font-size: 1.2rem;
-    color: #2e7d32;
-    font-weight: 600;
+    font-size: 1.25rem;
+    color: #1b5e20;
+    font-weight: 700;
 }
 
 .slogan {
     font-style: italic;
-    color: #388e3c;
-    font-size: 0.95rem;
+    color: #2e7d32;
+    font-size: 1rem;
 }
 
-/* Навигация с верхней и нижней линией */
+/* 2. Навигация с верхней и нижней линией */
 .nav-bar {
     display: flex;
     flex-direction: row;
@@ -73,21 +75,22 @@ body {
     align-items: center;
     gap: 30px;
     padding: 16px 0;
-    border-top: 1.5px solid #a5d6a7;
-    border-bottom: 1.5px solid #a5d6a7;
+    border-top: 1.5px solid #81c784;
+    border-bottom: 1.5px solid #81c784;
     margin-bottom: 35px;
 }
 
 .nav-link {
     text-decoration: none;
-    color: #1b5e20;
+    color: #0d3b11;
     font-weight: 700;
-    font-size: 1rem;
-    transition: color 0.2s ease;
+    font-size: 1.05rem;
+    transition: all 0.2s ease;
 }
 
 .nav-link:hover {
-    color: #43a047;
+    color: #2e7d32;
+    transform: translateY(-1px);
 }
 
 /* Основной контент */
@@ -97,23 +100,23 @@ body {
     gap: 35px;
 }
 
-/* Заголовки секций со штрихом слева */
+/* Заголовки секций с полоской слева */
 .section-title {
-    font-size: 1.6rem;
-    color: #1b5e20;
-    margin-bottom: 16px;
+    font-size: 1.7rem;
+    color: #0d3b11;
+    margin-bottom: 18px;
     position: relative;
-    padding-left: 16px;
+    padding-left: 18px;
 }
 
 .section-title::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 4px;
-    bottom: 4px;
-    width: 5px;
-    background-color: #2e7d32;
+    top: 3px;
+    bottom: 3px;
+    width: 6px;
+    background-color: #1b5e20;
     border-radius: 4px;
 }
 
@@ -122,25 +125,26 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
-    color: #2e462e;
+    color: #1c381e;
 }
 
 /* Блок "Образование" */
 .education-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .education-card {
     background-color: #c8e6c9;
-    padding: 16px 20px;
-    border-radius: 16px;
+    padding: 18px 22px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     gap: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 .badge {
@@ -149,16 +153,17 @@ body {
     font-weight: 700;
     padding: 6px 14px;
     border-radius: 12px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     white-space: nowrap;
 }
 
 .education-text {
     font-weight: 600;
-    color: #1b5e20;
+    color: #0d3b11;
+    font-size: 1rem;
 }
 
-/* Блок "Навыки" (Flexbox чипсы) */
+/* Блок "Навыки" (красивые округлые чипсы) */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -167,23 +172,26 @@ body {
 
 .skill {
     background-color: #c8e6c9;
-    color: #1b5e20;
-    padding: 10px 20px;
-    border-radius: 20px;
+    color: #0d3b11;
+    padding: 10px 22px;
+    border-radius: 25px;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: all 0.25 ease;
+    cursor: default;
 }
 
 .skill:hover {
     background-color: #a5d6a7;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
 }
 
 /* Разделительная линия перед контактами */
 .footer {
     margin-top: 40px;
-    border-top: 1.5px solid #a5d6a7;
+    border-top: 1.5px solid #81c784;
     padding-top: 35px;
 }
 
@@ -191,22 +199,29 @@ body {
 .contacts-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
     align-items: center;
     margin-top: 15px;
 }
 
 .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
-    color: #1b5e20;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: color 0.2s ease;
+    background-color: #c8e6c9;
+    color: #0d3b11;
+    padding: 10px 18px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
 }
 
 .contact-link:hover {
-    color: #43a047;
-    text-decoration: underline;
+    background-color: #a5d6a7;
+    transform: translateY(-2px);
+    color: #1b5e20;
 }
 
 .footer-copyright {
@@ -214,5 +229,5 @@ body {
     padding-top: 15px;
     border-top: 1px dashed #a5d6a7;
     font-size: 0.85rem;
-    color: #66bb6a;
+    color: #2e7d32;
 }
