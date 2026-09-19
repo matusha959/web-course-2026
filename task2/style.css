@@ -1,0 +1,234 @@
+/* ==========================================================================
+   1. БАЗОВЫЕ СТИЛИ (MOBILE FIRST — до 767px)
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Крупная структурная сетка страницы на CSS Grid */
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  min-height: 100vh;
+}
+
+/* Хедер (Flexbox внутри компонента) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+/* Иконка-гамбургер на мобильных */
+.burger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 44px;  /* Touch-friendly (минимум 44x44px) */
+  height: 44px; /* Touch-friendly */
+  padding: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.burger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* На мобильном меню скрыто, показывается только гамбургер */
+.nav {
+  display: none;
+}
+
+/* Герой-секция */
+.hero {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #0056b3, #00a8ff);
+  color: #ffffff;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Карточки (CSS Grid) */
+.services {
+  padding: 2rem 1.5rem;
+}
+
+.services h2, .contact h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Внутренняя раскладка карточки через Flexbox */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* Требование: плавный переход transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Плавный эффект при наведении (scale) */
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Форма обратной связи */
+.contact {
+  padding: 2rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Поля ввода и кнопки: минимальный размер 44px для touch-friendly */
+input, textarea, .btn {
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Состояния :hover и :focus для элементов формы */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.25);
+}
+
+.btn {
+  background-color: #0056b3;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* Требование: плавное изменение цвета при наведении */
+  transition: background-color 0.25s ease;
+}
+
+.btn:hover {
+  background-color: #003d82;
+}
+
+.btn:focus {
+  outline: 3px solid #80bdff;
+}
+
+/* Футер */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+
+/* ==========================================================================
+   2. КОНТРОЛЬНАЯ ТОЧКА 1: ПЛАНШЕТ (from 768px to 1199px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  /* Прячем гамбургер, показываем навигацию */
+  .burger-btn {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #0056b3;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  /* Карточки в 2 колонки на планшете */
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ==========================================================================
+   3. КОНТРОЛЬНАЯ ТОЧКА 2: ДЕСКТОП (from 1200px)
+   ========================================================================== */
+@media (min-width: 1200px) {
+  .header, .hero, .services, .contact {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  /* Карточки в 3 колонки на десктопе */
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
