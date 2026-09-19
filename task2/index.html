@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <!-- Обязательный метатег для адаптивности на мобильных -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лендинг - IT Услуги</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Крупная сетка страницы будет на CSS Grid -->
+  <div class="page-grid">
+
+    <!-- 1. Шапка (Header) -->
+    <header class="header">
+      <div class="logo">WebStudio</div>
+      
+      <!-- Гамбургер-меню (визуально для мобильных через CSS) -->
+      <button class="burger-btn" aria-label="Открыть меню">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+
+      <!-- Навигация (внутри карточек/компонентов — Flexbox) -->
+      <nav class="nav">
+        <a href="#hero" class="nav-link">Главная</a>
+        <a href="#services" class="nav-link">Услуги</a>
+        <a href="#contact" class="nav-link">Контакты</a>
+      </nav>
+    </header>
+
+    <!-- 2. Герой-секция (Hero) -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Современные веб-решения для вашего бизнеса</h1>
+        <p>Быстрая и качественная разработка адаптивных сайтов.</p>
+        <button class="btn btn-primary">Заказать услугу</button>
+      </div>
+    </section>
+
+    <!-- 3. Карточки услуг -->
+    <section id="services" class="services">
+      <h2>Наши услуги</h2>
+      <div class="cards-grid">
+        <article class="card">
+          <h3>Веб-разработка</h3>
+          <p>Создание современных и адаптивных сайтов под любые устройства.</p>
+          <button class="btn btn-card">Подробнее</button>
+        </article>
+        <article class="card">
+          <h3>UI/UX Дизайн</h3>
+          <p>Проектирование удобных и красивых интерфейсов для пользователей.</p>
+          <button class="btn btn-card">Подробнее</button>
+        </article>
+        <article class="card">
+          <h3>SEO Оптимизация</h3>
+          <p>Продвижение вашего сайта в топ поисковых систем.</p>
+          <button class="btn btn-card">Подробнее</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Форма обратной связи -->
+    <section id="contact" class="contact">
+      <h2>Обратная связь</h2>
+      <form class="contact-form" action="#" method="post" onclick="return false;">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Сообщение</label>
+          <textarea id="message" name="message" rows="4" placeholder="Ваше сообщение..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-submit">Отправить</button>
+      </form>
+    </section>
+
+    <!-- 5. Футер (Footer) -->
+    <footer class="footer">
+      <p>&copy; 2026 WebStudio. Все права защищены.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
