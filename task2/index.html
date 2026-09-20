@@ -2,161 +2,112 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <!-- Обязательный метатег для адаптивности на мобильных устройствах -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Network & Cloud Tech - Лабораторная №2</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Подключение Google Fonts для красивой типографики -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Глобальная структурная сетка страницы на CSS Grid -->
-  <div class="page-grid">
-
-    <!-- 1. ХЕДЕР (HEADER) -->
-    <header class="header">
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container header-inner">
       <div class="logo">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-          <path d="M2 17l10 5 10-5"></path>
-          <path d="M2 12l10 5 10-5"></path>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
         </svg>
-        <span>DataNet</span>
+        DataNet
       </div>
-
-      <!-- Иконка-гамбургер для мобильных (CSS-only / SVG) -->
-      <button class="burger-btn" aria-label="Открыть меню">
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-      </button>
-
-      <!-- Навигационное меню (Flexbox) -->
-      <nav class="nav">
+      
+      <!-- Навигация без нерабочей ссылки "Преимущества" -->
+      <nav class="nav" id="nav-menu">
         <a href="#hero" class="nav-link">Главная</a>
         <a href="#services" class="nav-link">Услуги</a>
-        <a href="#features" class="nav-link">Преимущества</a>
         <a href="#contact" class="nav-link">Контакты</a>
         <a href="#contact" class="btn btn-header">Начать проект</a>
       </nav>
-    </header>
 
-    <!-- 2. ГЕРОЙ-СЕКЦИЯ (HERO) -->
+      <!-- Бургер-меню (обязательно для мобильной версии по ТЗ) -->
+      <button class="burger-menu" aria-label="Открыть меню">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Главный экран -->
     <section id="hero" class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
+      <div class="container hero-content">
+        <div class="hero-text">
           <span class="badge">Next-Gen Architecture</span>
           <h1>Адаптивная вёрстка & Data Network Solutions</h1>
-          <p>
-            Высоконагруженные облачные решения, обработка больших данных и современная фронтенд-инженерия с подходом Mobile First.
-          </p>
+          <p>Высоконагруженные облачные решения, обработка больших данных и современная фронтенд-инженерия с подходом Mobile First.</p>
+          
+          <!-- Исправленный блок с кнопками (в один ряд) -->
           <div class="hero-actions">
             <a href="#services" class="btn btn-primary">Изучить сервисы</a>
-            <a href="#contact" class="btn btn-secondary">Связаться с нами</a>
+            <a href="#contact" class="btn btn-outline">Связаться с нами</a>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="hero-card-preview">
-            <div class="code-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <pre><code>// Grid & Flexbox Engine
+        <div class="hero-code">
+<pre><code>// Grid & Flexbox Engine
 const layout = {
   grid: "2D Page Structure",
   flex: "1D Component Layout",
   mobileFirst: true
 };</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="services-header">
+          <h2>Наши Услуги & Решения</h2>
+          <p>Полный спектр веб-разработки и облачных инфраструктурных сервисов</p>
+        </div>
+        
+        <div class="grid-container">
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Облачные Сети</h3>
+            <p>Мониторинг, масштабирование и автоматизация распределенных дата-центров в реальном времени.</p>
+            <a href="#" class="btn btn-card">Explore</a>
+          </div>
+          <div class="card">
+            <div class="card-icon">💻</div>
+            <h3>Адаптивный UI/UX</h3>
+            <p>Интерфейсы, идеально работающие на мобильных, планшетах и широких 4K-мониторах.</p>
+            <a href="#" class="btn btn-card">Explore</a>
+          </div>
+          <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Кибербезопасность</h3>
+            <p>Защита пользовательских данных, шифрование трафика и комплексный аудит уязвимостей.</p>
+            <a href="#" class="btn btn-card">Explore</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. СЕКЦИЯ УСЛУГ (SERVICES) -->
-    <section id="services" class="services">
-      <div class="section-header">
-        <h2>Наши Услуги & Решения</h2>
-        <p>Полный спектр веб-разработки и облачных инфраструктурных сервисов</p>
-      </div>
-
-      <!-- Карточки услуг на CSS Grid -->
-      <div class="cards-grid">
-        
-        <!-- Карточка 1 -->
-        <article class="card card-purple">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <h3>Облачные Сети</h3>
-          <p>Мониторинг, масштабирование и автоматизация распределенных дата-центров в реальном времени.</p>
-          <a href="#contact" class="btn btn-card">Explore</a>
-        </article>
-
-        <!-- Карточка 2 -->
-        <article class="card card-blue">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>Адаптивный UI/UX</h3>
-          <p>Интерфейсы, идеально работающие на мобильных, планшетах и широких 4K-мониторах.</p>
-          <a href="#contact" class="btn btn-card">Explore</a>
-        </article>
-
-        <!-- Карточка 3 -->
-        <article class="card card-indigo">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Кибербезопасность</h3>
-          <p>Защита пользовательских данных, шифрование трафика и комплексный аудит уязвимостей.</p>
-          <a href="#contact" class="btn btn-card">Explore</a>
-        </article>
-
-        <!-- Карточка 4 -->
-        <article class="card card-teal">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          </div>
-          <h3>Microservices API</h3>
-          <p>Быстрый REST & GraphQL бэкенд с отказоустойчивой архитектурой сервисов.</p>
-          <a href="#contact" class="btn btn-card">Explore</a>
-        </article>
-
-        <!-- Карточка 5 -->
-        <article class="card card-green">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
-          <h3>Big Data Analytics</h3>
-          <p>Интеллектуальная аналитика и визуализация бизнес-показателей любой сложности.</p>
-          <a href="#contact" class="btn btn-card">Explore</a>
-        </article>
-
-        <!-- Карточка 6 -->
-        <article class="card card-dark">
-          <div class="card-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          </div>
-          <h3>DevOps Automation</h3>
-          <p>Непрерывная интеграция и доставка кода (CI/CD) с минимальным временем простоя.</p>
-          <a href="#contact" class="btn btn-card">Explore</a>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- 4. ФОРМА ОБРАТНОЙ СВЯЗИ (CONTACT FORM) -->
+    <!-- Контакты -->
     <section id="contact" class="contact">
-      <div class="contact-card">
+      <div class="container">
+        <!-- Центрированный заголовок и подпись -->
         <div class="contact-header">
           <h2>Связаться с нами</h2>
           <p>Заполните форму ниже для обсуждения вашего проекта</p>
         </div>
 
-        <form class="contact-form" action="#" method="post" onclick="return false;">
+        <!-- Очищенная форма (без бюджета и темы) -->
+        <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault();">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Ваше имя *</label>
@@ -168,50 +119,18 @@ const layout = {
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="subject">Тема обращения</label>
-              <select id="subject" name="subject">
-                <option value="web">Веб-разработка / Лендинг</option>
-                <option value="cloud">Облачные сервисы</option>
-                <option value="other">Другой вопрос</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="budget">Ориентировочный бюджет</label>
-              <input type="text" id="budget" name="budget" placeholder="от $500">
-            </div>
-          </div>
-
           <div class="form-group">
             <label for="message">Сообщение *</label>
-            <textarea id="message" name="message" rows="4" placeholder="Опишите задачи и требования к проекту..." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Опишите задачи и требования к проекту..." required></textarea>
           </div>
 
           <button type="submit" class="btn btn-submit">
-            <span>Отправить заявку</span>
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="12" x2="22" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Отправить заявку ➔
           </button>
         </form>
       </div>
     </section>
-
-    <!-- 5. ФУТЕР (FOOTER) -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <div class="logo logo-light">
-            <span>DataNet</span>
-          </div>
-          <p>Лабораторная работа №2. Выполнил: Зулев Матвей (Группа 1).</p>
-        </div>
-        <div class="footer-links">
-          <span>&copy; 2026 DataNet Inc. Все права защищены.</span>
-        </div>
-      </div>
-    </footer>
-
-  </div>
+  </main>
 
 </body>
 </html>
