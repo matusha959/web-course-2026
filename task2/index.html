@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechCore — Разработка веб-продуктов</title>
+    <title>IRON FIT — Сеть фитнес-клубов</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="page-wrapper">
         <!-- Шапка -->
         <header class="header">
-            <div class="logo">Tech<span>Core</span></div>
+            <div class="logo">IRON<span>FIT</span></div>
             
             <!-- Меню для десктопа -->
             <nav class="nav">
                 <a href="#" class="nav__link">Главная</a>
-                <a href="#" class="nav__link">Услуги</a>
-                <a href="#" class="nav__link">Кейсы</a>
-                <a href="#" class="nav__link">О нас</a>
-                <a href="#" class="nav__link">Контакты</a>
+                <a href="#" class="nav__link">Тренировки</a>
+                <a href="#plans" class="nav__link">Абонементы</a>
+                <a href="#" class="nav__link">Тренеры</a>
+                <a href="#feedback" class="nav__link">Контакты</a>
             </nav>
 
-            <!-- Гамбургер для мобильных (только CSS) -->
+            <!-- CSS-Гамбургер для мобильных -->
             <div class="burger">
                 <span></span>
                 <span></span>
@@ -33,38 +33,67 @@
             <!-- Герой-секция -->
             <section class="hero">
                 <div class="hero__content">
-                    <p class="hero__subtitle">Разработка полного цикла</p>
-                    <h1 class="hero__title">СОЗДАЕМ ЦИФРОВЫЕ ПРОДУКТЫ</h1>
-                    <a href="#feedback" class="btn btn--primary">Обсудить проект</a>
+                    <p class="hero__subtitle">ТВОЕ ТЕЛО — ТВОЙ ПРОЕКТ</p>
+                    <h1 class="hero__title">НАЧНИ ТРАНСФОРМАЦИЮ СЕГОДНЯ</h1>
+                    <p class="hero__desc">Современное оборудование, профессиональные тренеры и атмосфера, которая заставляет двигаться вперед.</p>
+                    <a href="#plans" class="btn btn--primary">Выбрать абонемент</a>
                 </div>
             </section>
 
-            <!-- Карточки услуг -->
-            <section class="services">
-                <h2 class="section-title">Наши услуги</h2>
-                <div class="services__grid">
+            <!-- Секция Абонементов (Grid + Flexbox) -->
+            <section class="plans" id="plans">
+                <h2 class="section-title">Наши абонементы</h2>
+                <p class="section-subtitle">Выберите подходящий формат тренировок</p>
+                
+                <div class="plans__grid">
+                    <!-- Карточка 1 -->
                     <article class="card">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Веб-разработка" class="card__img">
+                        <div class="card__header">
+                            <h3 class="card__title">Разовое посещение</h3>
+                            <p class="card__price">25 BYN</p>
+                        </div>
                         <div class="card__content">
-                            <h3 class="card__title">Веб-разработка</h3>
-                            <p class="card__text">Создаем быстрые и адаптивные сайты любой сложности.</p>
-                            <a href="#" class="card__link">Подробнее &rarr;</a>
+                            <ul class="card__list">
+                                <li>Доступ в тренажерный зал</li>
+                                <li>1 час тренировки</li>
+                                <li>Шкафчик в раздевалке</li>
+                            </ul>
+                            <a href="#feedback" class="btn btn--outline">Выбрать</a>
                         </div>
                     </article>
-                    <article class="card">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=400&q=80" alt="Мобильные приложения" class="card__img">
+
+                    <!-- Карточка 2 -->
+                    <article class="card card--popular">
+                        <div class="card__badge">Хит продаж</div>
+                        <div class="card__header">
+                            <h3 class="card__title">Месячный безлимит</h3>
+                            <p class="card__price">120 BYN</p>
+                        </div>
                         <div class="card__content">
-                            <h3 class="card__title">Мобильные приложения</h3>
-                            <p class="card__text">Кроссплатформенная разработка под iOS и Android.</p>
-                            <a href="#" class="card__link">Подробнее &rarr;</a>
+                            <ul class="card__list">
+                                <li>Неограниченный доступ</li>
+                                <li>Все групповые занятия</li>
+                                <li>Бассейн и сауна</li>
+                                <li>Фитнес-тестирование</li>
+                            </ul>
+                            <a href="#feedback" class="btn btn--primary">Выбрать</a>
                         </div>
                     </article>
+
+                    <!-- Карточка 3 -->
                     <article class="card">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="UI/UX Дизайн" class="card__img">
+                        <div class="card__header">
+                            <h3 class="card__title">Годовой VIP</h3>
+                            <p class="card__price">900 BYN</p>
+                        </div>
                         <div class="card__content">
-                            <h3 class="card__title">UI/UX Дизайн</h3>
-                            <p class="card__text">Проектируем удобные интерфейсы, которые повышают конверсию.</p>
-                            <a href="#" class="card__link">Подробнее &rarr;</a>
+                            <ul class="card__list">
+                                <li>Все включено из безлимита</li>
+                                <li>5 персональных тренировок</li>
+                                <li>Индивидуальный план питания</li>
+                                <li>Заморозка на 30 дней</li>
+                            </ul>
+                            <a href="#feedback" class="btn btn--outline">Выбрать</a>
                         </div>
                     </article>
                 </div>
@@ -73,44 +102,48 @@
             <!-- Секция О нас -->
             <section class="about">
                 <div class="about__image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Наша команда">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Тренажерный зал">
                 </div>
                 <div class="about__content">
-                    <h2 class="section-title">О нас</h2>
-                    <p>Мы — команда инженеров и дизайнеров, которая с 2018 года помогает бизнесу расти с помощью технологий. Мы не просто пишем код, мы решаем бизнес-задачи.</p>
-                    <p>В нашей команде более 20 сертифицированных специалистов, которые готовы реализовать проект любой сложности.</p>
+                    <h2 class="section-title" style="text-align: left;">Почему IRONFIT?</h2>
+                    <p>Мы объединили передовые технологии тренировок и комфорт премиум-класса. Наши залы оснащены оборудованием мировых брендов, а тренеры имеют международные сертификаты.</p>
+                    <p>Площадь клуба — более 2000 кв.м. Просторные раздевалки, зона кроссфита, кардио-зона с панорамными окнами и собственная парковка.</p>
                 </div>
             </section>
 
-            <!-- Форма обратной связи -->
+            <!-- Форма обратной связи (По центру) -->
             <section class="feedback" id="feedback">
-                <h2 class="section-title">Оставить заявку</h2>
-                <form class="feedback__form" action="#">
-                    <div class="form-group">
-                        <label for="name">Имя</label>
-                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                    </div>
-                    <div class="form-group form-group--full">
-                        <label for="message">Сообщение</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Опишите ваш проект"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn--submit form-group--full">Отправить</button>
-                </form>
+                <div class="feedback__container">
+                    <h2 class="section-title">Записаться на пробное занятие</h2>
+                    <p class="section-subtitle">Оставьте заявку, и мы подберем удобное время</p>
+                    
+                    <form class="feedback__form" action="#">
+                        <div class="form-group">
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+375 (29) XXX-XX-XX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Комментарий</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Какая цель тренировок?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--submit">Отправить заявку</button>
+                    </form>
+                </div>
             </section>
         </main>
 
         <!-- Футер -->
         <footer class="footer">
             <div class="footer__info">
-                <p>&copy; 2026 TechCore. Все права защищены.</p>
+                <p>&copy; 2026 IRONFIT. Все права защищены.</p>
             </div>
             <div class="footer__contacts">
                 <a href="tel:+375291234567">+375 (29) 123-45-67</a>
-                <a href="mailto:hello@techcore.by">hello@techcore.by</a>
+                <a href="mailto:info@ironfit.by">info@ironfit.by</a>
             </div>
         </footer>
     </div>
