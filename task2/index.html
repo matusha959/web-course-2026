@@ -1,136 +1,118 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Network & Cloud Tech - Лабораторная №2</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCore — Разработка веб-продуктов</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="page-wrapper">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="logo">Tech<span>Core</span></div>
+            
+            <!-- Меню для десктопа -->
+            <nav class="nav">
+                <a href="#" class="nav__link">Главная</a>
+                <a href="#" class="nav__link">Услуги</a>
+                <a href="#" class="nav__link">Кейсы</a>
+                <a href="#" class="nav__link">О нас</a>
+                <a href="#" class="nav__link">Контакты</a>
+            </nav>
 
-  <!-- Шапка сайта -->
-  <header class="header">
-    <div class="container header-inner">
-      <div class="logo">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-          <polyline points="2 17 12 22 22 17"></polyline>
-          <polyline points="2 12 12 17 22 12"></polyline>
-        </svg>
-        DataNet
-      </div>
-      
-      <!-- Навигация без нерабочей ссылки "Преимущества" -->
-      <nav class="nav" id="nav-menu">
-        <a href="#hero" class="nav-link">Главная</a>
-        <a href="#services" class="nav-link">Услуги</a>
-        <a href="#contact" class="nav-link">Контакты</a>
-        <a href="#contact" class="btn btn-header">Начать проект</a>
-      </nav>
+            <!-- Гамбургер для мобильных (только CSS) -->
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
 
-      <!-- Бургер-меню (обязательно для мобильной версии по ТЗ) -->
-      <button class="burger-menu" aria-label="Открыть меню">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
+        <main class="main">
+            <!-- Герой-секция -->
+            <section class="hero">
+                <div class="hero__content">
+                    <p class="hero__subtitle">Разработка полного цикла</p>
+                    <h1 class="hero__title">СОЗДАЕМ ЦИФРОВЫЕ ПРОДУКТЫ</h1>
+                    <a href="#feedback" class="btn btn--primary">Обсудить проект</a>
+                </div>
+            </section>
+
+            <!-- Карточки услуг -->
+            <section class="services">
+                <h2 class="section-title">Наши услуги</h2>
+                <div class="services__grid">
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Веб-разработка" class="card__img">
+                        <div class="card__content">
+                            <h3 class="card__title">Веб-разработка</h3>
+                            <p class="card__text">Создаем быстрые и адаптивные сайты любой сложности.</p>
+                            <a href="#" class="card__link">Подробнее &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=400&q=80" alt="Мобильные приложения" class="card__img">
+                        <div class="card__content">
+                            <h3 class="card__title">Мобильные приложения</h3>
+                            <p class="card__text">Кроссплатформенная разработка под iOS и Android.</p>
+                            <a href="#" class="card__link">Подробнее &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="UI/UX Дизайн" class="card__img">
+                        <div class="card__content">
+                            <h3 class="card__title">UI/UX Дизайн</h3>
+                            <p class="card__text">Проектируем удобные интерфейсы, которые повышают конверсию.</p>
+                            <a href="#" class="card__link">Подробнее &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Секция О нас -->
+            <section class="about">
+                <div class="about__image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Наша команда">
+                </div>
+                <div class="about__content">
+                    <h2 class="section-title">О нас</h2>
+                    <p>Мы — команда инженеров и дизайнеров, которая с 2018 года помогает бизнесу расти с помощью технологий. Мы не просто пишем код, мы решаем бизнес-задачи.</p>
+                    <p>В нашей команде более 20 сертифицированных специалистов, которые готовы реализовать проект любой сложности.</p>
+                </div>
+            </section>
+
+            <!-- Форма обратной связи -->
+            <section class="feedback" id="feedback">
+                <h2 class="section-title">Оставить заявку</h2>
+                <form class="feedback__form" action="#">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group form-group--full">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Опишите ваш проект"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--submit form-group--full">Отправить</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <div class="footer__info">
+                <p>&copy; 2026 TechCore. Все права защищены.</p>
+            </div>
+            <div class="footer__contacts">
+                <a href="tel:+375291234567">+375 (29) 123-45-67</a>
+                <a href="mailto:hello@techcore.by">hello@techcore.by</a>
+            </div>
+        </footer>
     </div>
-  </header>
-
-  <main>
-    <!-- Главный экран -->
-    <section id="hero" class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <span class="badge">Next-Gen Architecture</span>
-          <h1>Адаптивная вёрстка & Data Network Solutions</h1>
-          <p>Высоконагруженные облачные решения, обработка больших данных и современная фронтенд-инженерия с подходом Mobile First.</p>
-          
-          <!-- Исправленный блок с кнопками (в один ряд) -->
-          <div class="hero-actions">
-            <a href="#services" class="btn btn-primary">Изучить сервисы</a>
-            <a href="#contact" class="btn btn-outline">Связаться с нами</a>
-          </div>
-        </div>
-
-        <div class="hero-code">
-<pre><code>// Grid & Flexbox Engine
-const layout = {
-  grid: "2D Page Structure",
-  flex: "1D Component Layout",
-  mobileFirst: true
-};</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <!-- Услуги -->
-    <section id="services" class="services">
-      <div class="container">
-        <div class="services-header">
-          <h2>Наши Услуги & Решения</h2>
-          <p>Полный спектр веб-разработки и облачных инфраструктурных сервисов</p>
-        </div>
-        
-        <div class="grid-container">
-          <div class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Облачные Сети</h3>
-            <p>Мониторинг, масштабирование и автоматизация распределенных дата-центров в реальном времени.</p>
-            <a href="#" class="btn btn-card">Explore</a>
-          </div>
-          <div class="card">
-            <div class="card-icon">💻</div>
-            <h3>Адаптивный UI/UX</h3>
-            <p>Интерфейсы, идеально работающие на мобильных, планшетах и широких 4K-мониторах.</p>
-            <a href="#" class="btn btn-card">Explore</a>
-          </div>
-          <div class="card">
-            <div class="card-icon">🛡️</div>
-            <h3>Кибербезопасность</h3>
-            <p>Защита пользовательских данных, шифрование трафика и комплексный аудит уязвимостей.</p>
-            <a href="#" class="btn btn-card">Explore</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Контакты -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <!-- Центрированный заголовок и подпись -->
-        <div class="contact-header">
-          <h2>Связаться с нами</h2>
-          <p>Заполните форму ниже для обсуждения вашего проекта</p>
-        </div>
-
-        <!-- Очищенная форма (без бюджета и темы) -->
-        <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault();">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Ваше имя *</label>
-              <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Электронная почта *</label>
-              <input type="email" id="email" name="email" placeholder="name@domain.com" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Сообщение *</label>
-            <textarea id="message" name="message" rows="5" placeholder="Опишите задачи и требования к проекту..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-submit">
-            Отправить заявку ➔
-          </button>
-        </form>
-      </div>
-    </section>
-  </main>
-
 </body>
 </html>
