@@ -6,9 +6,9 @@
     --surface-color: #141414;
     --surface-hover: #1f1f1f;
     --text-primary: #ffffff;
-    --text-secondary: #888888;
-    --accent-color: #ccff00; /* Кислотно-зеленый */
-    --accent-hover: #aadd00;
+    --text-secondary: #a0a0a0;
+    --accent-color: #6c5ce7; /* Фиолетовый акцент */
+    --accent-hover: #5649c0;
     --border-color: #2a2a2a;
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --transition: all 0.3s ease;
@@ -44,12 +44,11 @@ a {
     transition: var(--transition);
 }
 
-/* Структура страницы через Grid */
 .page-wrapper {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    overflow-x: hidden; /* Защита от горизонтального скролла */
+    overflow-x: hidden;
 }
 
 /* Кнопки (Touch-friendly: min-height 48px) */
@@ -60,34 +59,26 @@ a {
     min-height: 48px;
     padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
     transition: var(--transition);
     font-size: 15px;
     letter-spacing: 1px;
+    text-align: center;
 }
 
+/* Все кнопки теперь одного стиля */
 .btn--primary {
     background-color: var(--accent-color);
-    color: var(--bg-color);
+    color: var(--text-primary);
 }
 
 .btn--primary:hover {
     background-color: var(--accent-hover);
     transform: translateY(-2px);
-}
-
-.btn--outline {
-    background-color: transparent;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
-}
-
-.btn--outline:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
 }
 
 /* =========================================
@@ -116,12 +107,10 @@ a {
     color: var(--accent-color);
 }
 
-/* На мобильных меню скрыто */
 .nav {
     display: none; 
 }
 
-/* Гамбургер (чистый CSS) */
 .burger {
     display: flex;
     flex-direction: column;
@@ -157,21 +146,13 @@ a {
     min-height: 70vh;
 }
 
-.hero__subtitle {
-    color: var(--accent-color);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
 .hero__title {
     font-size: 36px;
     line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     text-transform: uppercase;
     font-weight: 900;
+    max-width: 800px;
 }
 
 .hero__desc {
@@ -194,18 +175,12 @@ a {
 .section-title {
     font-size: 28px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     text-transform: uppercase;
     font-weight: 800;
 }
 
-.section-subtitle {
-    text-align: center;
-    color: var(--text-secondary);
-    margin-bottom: 40px;
-}
-
-/* Сетка карточек */
+/* Сетка карточек: 1 колонка на мобильных */
 .plans__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -226,7 +201,7 @@ a {
 .card:hover {
     transform: translateY(-5px);
     border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(204, 255, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.15);
 }
 
 .card--popular {
@@ -238,7 +213,7 @@ a {
     top: 15px;
     right: -30px;
     background-color: var(--accent-color);
-    color: var(--bg-color);
+    color: var(--text-primary);
     font-size: 12px;
     font-weight: 800;
     padding: 5px 30px;
@@ -326,7 +301,7 @@ a {
 }
 
 /* =========================================
-   6. ФОРМА (Строго по центру)
+   6. ФОРМА (Строго по центру, в столбик)
    ========================================= */
 .feedback {
     padding: 80px 20px;
@@ -334,16 +309,18 @@ a {
 }
 
 .feedback__container {
-    max-width: 600px;
-    margin: 0 auto; /* Центрирование */
+    max-width: 500px; /* Узкий контейнер для формы */
+    margin: 0 auto;
     background-color: var(--surface-color);
     padding: 40px 20px;
     border-radius: 12px;
     border: 1px solid var(--border-color);
 }
 
+/* Форма строго в один столбик */
 .feedback__form {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
@@ -375,7 +352,6 @@ a {
     transition: var(--transition);
 }
 
-/* Hover и Focus для полей */
 .form-group input:hover,
 .form-group textarea:hover {
     border-color: #444;
@@ -385,7 +361,7 @@ a {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.15);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
 }
 
 .form-group input::placeholder,
@@ -393,12 +369,17 @@ a {
     color: #555;
 }
 
+/* Аккуратная кнопка отправки */
 .btn--submit {
     background-color: var(--accent-color);
-    color: var(--bg-color);
+    color: var(--text-primary);
     border: none;
     font-size: 16px;
     margin-top: 10px;
+    width: 100%;
+    max-width: 250px; /* Ограничиваем ширину */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn--submit:hover {
@@ -441,7 +422,6 @@ a {
         padding: 20px 40px;
     }
 
-    /* Скрываем бургер, показываем меню */
     .burger {
         display: none;
     }
@@ -466,12 +446,11 @@ a {
         font-size: 52px;
     }
 
-    /* Сетка абонементов в 2 колонки */
+    /* Сетка абонементов в 2 колонки на планшетах */
     .plans__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* О нас в 2 колонки */
     .about {
         flex-direction: row;
         align-items: center;
@@ -495,8 +474,8 @@ a {
     }
 }
 
-/* Десктоп: от 1200px */
-@media (min-width: 1200px) {
+/* Десктоп: от 1024px (чтобы абонементы вставали в линию) */
+@media (min-width: 1024px) {
     .hero {
         padding: 120px 20px;
     }
@@ -507,7 +486,7 @@ a {
         margin: 0 auto 30px;
     }
 
-    /* Сетка абонементов в 3 колонки (в линию!) */
+    /* Сетка абонементов ровно в 3 колонки (в линию!) */
     .plans__grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
