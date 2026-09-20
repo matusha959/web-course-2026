@@ -1,273 +1,478 @@
-/* Базовые настройки и переменные */
+/* =========================================
+   1. ГЛОБАЛЬНЫЕ СТИЛИ И ПЕРЕМЕННЫЕ (Mobile First)
+   ========================================= */
 :root {
-  --primary-color: #0056b3;
-  --primary-hover: #004494;
-  --bg-color: #f8f9fa;
-  --text-main: #333333;
-  --text-muted: #666666;
-  --white: #ffffff;
-  --border-color: #dddddd;
+    --bg-color: #0d0d0d;
+    --surface-color: #1a1a1a;
+    --surface-hover: #252525;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-color: #6c5ce7;
+    --accent-hover: #5649c0;
+    --border-color: #333333;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition: all 0.3s ease;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--text-main);
-  background-color: var(--bg-color);
-  line-height: 1.6;
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* Кнопки */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+/* Требование: Основная структурная сетка страницы через CSS Grid */
+.page-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    overflow-x: hidden; /* Защита от горизонтального скролла */
+}
+
+/* Требование: Кнопки и поля не менее 44x44px (touch-friendly) */
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 16px;
 }
 
-.btn-header {
-  background-color: var(--primary-color);
-  color: var(--white);
+.btn--primary {
+    background-color: var(--accent-color);
+    color: var(--text-primary);
 }
 
-.btn-primary {
-  background-color: transparent;
-  color: var(--white);
-  border: 1px solid var(--white);
+.btn--primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
 }
 
-.btn-primary:hover {
-  background-color: var(--white);
-  color: var(--primary-color);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--white);
-  text-decoration: underline;
-  padding: 10px 0;
-}
-
-.btn-card, .btn-submit {
-  background-color: var(--primary-color);
-  color: var(--white);
-  width: 100%;
-}
-
-.btn-card:hover, .btn-submit:hover {
-  background-color: var(--primary-hover);
-}
-
-/* Шапка (Flexbox) */
+/* =========================================
+   2. ШАПКА (Header) - Flexbox для компонентов
+   ========================================= */
 .header {
-  background-color: var(--white);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 15px 0;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
+.logo span {
+    color: var(--accent-color);
+}
+
+/* Скрываем десктопное меню на мобильных */
 .nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+    display: none; 
 }
 
-.nav-link {
-  text-decoration: none;
-  color: var(--text-main);
-  font-weight: 500;
+/* CSS-Гамбургер (требование: визуально через span + CSS) */
+.burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px; /* Увеличиваем кликабельную область */
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav-link:hover {
-  color: var(--primary-color);
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition);
 }
 
-.burger-menu {
-  display: none; /* Скрыто на десктопе */
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-main);
+.burger:hover span {
+    background-color: var(--accent-color);
 }
 
-/* Главный экран (Hero) */
+/* =========================================
+   3. ГЕРОЙ-СЕКЦИЯ
+   ========================================= */
 .hero {
-  background-color: #0088ff; /* Голубой фон как на скрине */
-  color: var(--white);
-  padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.9)), 
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    min-height: 60vh;
 }
 
-/* Выравнивание текста и блоков в Hero */
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 40px;
+.hero__subtitle {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 16px;
 }
 
-.hero-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.hero__title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    font-weight: 800;
 }
 
-.hero-text p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 30px auto;
+/* =========================================
+   4. СЕКЦИИ И КАРТОЧКИ (Grid + Flexbox)
+   ========================================= */
+.section-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
-/* Исправленные кнопки в Hero */
-.hero-actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap; /* Защита от слипания на смартфонах */
-}
-
-/* Блок с кодом */
-.hero-code {
-  background-color: transparent;
-  color: var(--white);
-  text-align: center;
-  font-family: monospace;
-  font-size: 1rem;
-}
-
-/* Услуги (Grid) */
 .services {
-  padding: 60px 0;
-  background-color: var(--bg-color);
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.services-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+/* Требование: Сетка карточек через Grid */
+.services__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .card {
-  background-color: var(--white);
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Требование: transition для карточки при hover */
+    transition: var(--transition); 
+    border: 1px solid var(--border-color);
+    /* Требование: Внутренняя раскладка через Flexbox */
+    display: flex;
+    flex-direction: column;
 }
 
-.card h3 {
-  margin: 15px 0 10px 0;
+.card:hover {
+    /* Требование: transform scale при hover */
+    transform: scale(1.02);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-.card p {
-  color: var(--text-muted);
-  margin-bottom: 20px;
-  flex-grow: 1;
+.card__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Контакты */
-.contact {
-  padding: 60px 0;
-  background-color: var(--white);
+.card__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-/* Исправленное центрирование текста над формой */
-.contact-header {
-  text-align: center;
-  margin-bottom: 40px;
+.card__title {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-.contact-header p {
-  color: var(--text-muted);
-  margin-top: 5px;
+.card__text {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
-.contact-form {
-  max-width: 700px;
-  margin: 0 auto;
+.card__link {
+    color: var(--accent-color);
+    font-weight: 600;
+    display: inline-block;
+    margin-top: auto;
 }
 
-.form-row {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.card__link:hover {
+    color: var(--text-primary);
+    letter-spacing: 1px;
+}
+
+/* Секция О нас */
+.about {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about__image img {
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+.about__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about__content p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   5. ФОРМА ОБРАТНОЙ СВЯЗИ
+   ========================================= */
+.feedback {
+    padding: 60px 20px;
+    background-color: var(--surface-color);
+}
+
+.feedback__form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .form-group label {
-  margin-bottom: 8px;
-  font-weight: 500;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.form-group input, 
+.form-group input,
 .form-group textarea {
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-family: inherit;
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 16px;
+    min-height: 48px; /* Touch-friendly */
+    transition: var(--transition);
 }
 
-/* Адаптивность (Mobile First -> Desktop) */
-@media (max-width: 768px) {
-  .nav {
-    display: none; /* Скрываем обычное меню на мобилках */
-  }
-  .burger-menu {
-    display: block; /* Показываем бургер-меню */
-  }
+/* Требование: стили для :focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #555;
+}
+
+.form-group--full {
+    grid-column: 1 / -1;
+}
+
+.btn--submit {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn--submit:hover {
+    background-color: var(--accent-hover);
+}
+
+/* =========================================
+   6. ФУТЕР
+   ========================================= */
+.footer {
+    padding: 30px 20px;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__contacts a:hover {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   7. МЕДИАЗАПРОСЫ (Mobile First -> Tablet -> Desktop)
+   ========================================= */
+
+/* Планшет: от 768px */
 @media (min-width: 768px) {
-  .form-row {
-    flex-direction: row;
-  }
-  .form-group {
-    flex: 1;
-  }
+    .header {
+        padding: 20px 40px;
+    }
+
+    /* Скрываем гамбургер, показываем меню */
+    .burger {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        gap: 30px;
+    }
+
+    .nav__link {
+        font-weight: 500;
+        position: relative;
+    }
+
+    /* Красивый ховер для ссылок */
+    .nav__link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--accent-color);
+        transition: var(--transition);
+    }
+
+    .nav__link:hover::after {
+        width: 100%;
+    }
+
+    .hero__title {
+        font-size: 48px;
+    }
+
+    /* Сетка карточек в 2 колонки */
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* О нас в 2 колонки */
+    .about {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .about__image,
+    .about__content {
+        flex: 1;
+    }
+
+    /* Форма в 2 колонки */
+    .feedback__form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    .footer__contacts {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+/* Десктоп: от 1200px */
+@media (min-width: 1200px) {
+    .hero {
+        padding: 120px 20px;
+        min-height: 70vh;
+    }
+
+    .hero__title {
+        font-size: 64px;
+        max-width: 900px;
+        margin: 0 auto 30px;
+    }
+
+    /* Сетка карточек в 3 колонки */
+    .services__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .about {
+        gap: 60px;
+        padding: 100px 20px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
 }
