@@ -12,16 +12,13 @@
         <header class="header">
             <div class="logo">IRON<span>FIT</span></div>
             
-            <!-- Меню для десктопа -->
             <nav class="nav">
-                <a href="#" class="nav__link">Главная</a>
-                <a href="#" class="nav__link">Тренировки</a>
+                <a href="#hero" class="nav__link">Главная</a>
                 <a href="#plans" class="nav__link">Абонементы</a>
-                <a href="#" class="nav__link">Тренеры</a>
+                <a href="#about" class="nav__link">О нас</a>
                 <a href="#feedback" class="nav__link">Контакты</a>
             </nav>
 
-            <!-- CSS-Гамбургер для мобильных -->
             <div class="burger">
                 <span></span>
                 <span></span>
@@ -30,20 +27,18 @@
         </header>
 
         <main class="main">
-            <!-- Герой-секция -->
-            <section class="hero">
+            <!-- Герой-секция (без тонкой надписи) -->
+            <section class="hero" id="hero">
                 <div class="hero__content">
-                    <p class="hero__subtitle">ТВОЕ ТЕЛО — ТВОЙ ПРОЕКТ</p>
                     <h1 class="hero__title">НАЧНИ ТРАНСФОРМАЦИЮ СЕГОДНЯ</h1>
                     <p class="hero__desc">Современное оборудование, профессиональные тренеры и атмосфера, которая заставляет двигаться вперед.</p>
                     <a href="#plans" class="btn btn--primary">Выбрать абонемент</a>
                 </div>
             </section>
 
-            <!-- Секция Абонементов (Grid + Flexbox) -->
+            <!-- Секция Абонементов -->
             <section class="plans" id="plans">
                 <h2 class="section-title">Наши абонементы</h2>
-                <p class="section-subtitle">Выберите подходящий формат тренировок</p>
                 
                 <div class="plans__grid">
                     <!-- Карточка 1 -->
@@ -58,7 +53,7 @@
                                 <li>1 час тренировки</li>
                                 <li>Шкафчик в раздевалке</li>
                             </ul>
-                            <a href="#feedback" class="btn btn--outline">Выбрать</a>
+                            <a href="#feedback" class="btn btn--primary">Выбрать</a>
                         </div>
                     </article>
 
@@ -93,29 +88,28 @@
                                 <li>Индивидуальный план питания</li>
                                 <li>Заморозка на 30 дней</li>
                             </ul>
-                            <a href="#feedback" class="btn btn--outline">Выбрать</a>
+                            <a href="#feedback" class="btn btn--primary">Выбрать</a>
                         </div>
                     </article>
                 </div>
             </section>
 
             <!-- Секция О нас -->
-            <section class="about">
+            <section class="about" id="about">
                 <div class="about__image">
                     <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Тренажерный зал">
                 </div>
                 <div class="about__content">
-                    <h2 class="section-title" style="text-align: left;">Почему IRONFIT?</h2>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Почему IRONFIT?</h2>
                     <p>Мы объединили передовые технологии тренировок и комфорт премиум-класса. Наши залы оснащены оборудованием мировых брендов, а тренеры имеют международные сертификаты.</p>
                     <p>Площадь клуба — более 2000 кв.м. Просторные раздевалки, зона кроссфита, кардио-зона с панорамными окнами и собственная парковка.</p>
                 </div>
             </section>
 
-            <!-- Форма обратной связи (По центру) -->
+            <!-- Форма обратной связи (В столбик, по центру) -->
             <section class="feedback" id="feedback">
                 <div class="feedback__container">
-                    <h2 class="section-title">Записаться на пробное занятие</h2>
-                    <p class="section-subtitle">Оставьте заявку, и мы подберем удобное время</p>
+                    <h2 class="section-title" style="margin-bottom: 30px;">Записаться на пробное занятие</h2>
                     
                     <form class="feedback__form" action="#">
                         <div class="form-group">
