@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Быки и коровы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Игра «Быки и коровы»</h1>
+        <p class="rules">Я загадал 4-значное число с уникальными цифрами. Попробуй угадать!</p>
+
+        <!-- Блок для ввода и кнопок -->
+        <div class="controls">
+            <input type="text" id="guess-input" placeholder="Например: 1234" maxlength="4" autocomplete="off">
+            <button id="check-btn">Проверить</button>
+            <button id="new-game-btn">Новая игра</button>
+        </div>
+
+        <!-- Сообщение об ошибке валидации -->
+        <div id="error-message" class="error"></div>
+
+        <!-- Информация об игре -->
+        <div class="info-panel">
+            <p>Попыток сделано: <span id="attempts-count">0</span></p>
+            <div id="game-status" class="status"></div>
+        </div>
+
+        <!-- История ходов -->
+        <div class="history-container">
+            <h3>История попыток:</h3>
+            <div id="history-list" class="history-list">
+                <!-- Сюда скрипт будет добавлять записи -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
