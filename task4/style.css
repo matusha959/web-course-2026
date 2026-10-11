@@ -38,14 +38,17 @@ h1 {
 }
 
 /* Блок ввода */
+
 .controls {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap; /* Разрешаем элементам переноситься, если не влезают */
+    gap: 8px;        /* Немного уменьшили отступ между элементами */
     margin-bottom: 15px;
 }
 
 input {
-    flex: 1;
+    flex: 1 1 180px; /* Поле ввода может сжиматься и занимать минимум 180px */
+    min-width: 0;
     padding: 10px;
     font-size: 16px;
     border: 2px solid #bdc3c7;
@@ -59,8 +62,10 @@ input:focus {
 }
 
 button {
-    padding: 10px 15px;
-    font-size: 16px;
+    flex: 0 0 auto;  
+    padding: 10px 12px; 
+    font-size: 15px;
+    white-space: nowrap; /* Запрещаем тексту внутри кнопки переноситься */
     border: none;
     border-radius: 5px;
     cursor: pointer;
