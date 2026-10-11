@@ -132,28 +132,56 @@ button:disabled {
     color: #2c3e50;
 }
 
+/* История */
+.history-container {
+    border-top: 2px solid #ecf0f1;
+    padding-top: 15px;
+}
+
+.history-container h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
 .history-list {
-    max-height: 150px;
+    max-height: 180px; /* Немного увеличили высоту */
     overflow-y: auto;
     font-size: 15px;
+    padding-right: 10px; /* Важно: отступ справа, чтобы текст не наезжал на скроллбар */
+}
+
+/* Делаем скроллбар тонким и аккуратным */
+.history-list::-webkit-scrollbar {
+    width: 6px;
+}
+.history-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.history-list::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 10px;
+}
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: #95a5a6;
+}
+
+
+.history-list {
+    scrollbar-width: thin;
+    scrollbar-color: #bdc3c7 #f1f1f1;
 }
 
 .history-item {
-    padding: 5px 10px;
+    padding: 8px 5px; /* Чуть увеличили отступы по вертикали */
     border-bottom: 1px solid #ecf0f1;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
+/* Убираем рамку у последнего элемента, чтобы не дублировалась с border-top контейнера */
 .history-item:last-child {
     border-bottom: none;
-}
-
-.history-item .guess {
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.history-item .result {
-    color: #7f8c8d;
 }
