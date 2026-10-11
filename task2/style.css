@@ -103,12 +103,33 @@ a {
     text-transform: uppercase;
 }
 
+/* Чекбокс для мобильного меню (скрыт) */
+.menu-toggle {
+    display: none;
+}
+
 .logo span {
     color: var(--accent-color);
 }
 
+/* Мобильное меню — выпадающее, скрыто по умолчанию */
 .nav {
-    display: none; 
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--surface-color);
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    gap: 15px;
+    z-index: 99;
+}
+
+/* Показываем меню, когда чекбокс отмечен */
+.menu-toggle:checked ~ .nav {
+    display: flex;
 }
 
 .burger {
@@ -130,6 +151,17 @@ a {
     background-color: var(--accent-color);
     border-radius: 2px;
     transition: var(--transition);
+}
+
+/* Анимация бургера в крестик при открытом меню */
+.menu-toggle:checked ~ .burger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle:checked ~ .burger span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle:checked ~ .burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* =========================================
@@ -422,12 +454,24 @@ a {
         padding: 20px 40px;
     }
 
+        /* Скрываем бургер и чекбокс на планшетах */
     .burger {
         display: none;
     }
 
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Меню снова горизонтальное и статичное */
     .nav {
         display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        padding: 0;
+        border-bottom: none;
+        background-color: transparent;
         gap: 30px;
     }
 
@@ -474,8 +518,8 @@ a {
     }
 }
 
-/* Десктоп: от 1024px (чтобы абонементы вставали в линию) */
-@media (min-width: 1024px) {
+
+@media (min-width: 1200px) {
     .hero {
         padding: 120px 20px;
     }
